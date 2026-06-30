@@ -56,6 +56,7 @@ Each transit operator currently manages its data in isolation — AGUTS unifies 
 | `AGUTS_BCNF_Proofs.docx.pdf` | BCNF Normalization Proofs |
 | `AGUTS_DDL_Scripts.sql` | DDL Scripts (PostgreSQL) |
 | `AGUTS_INSERT_SCRIPTS.txt` | Sample Data |
+| `AGUTS_top3-Queries.pdf` | Top 3 queries from different scenarios |
 
 ---
 
