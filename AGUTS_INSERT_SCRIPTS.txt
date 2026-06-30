@@ -1,0 +1,817 @@
+
+-- AGUTS – Data INSERT Script
+-- IT-214 DBMS | Lab Group 5 | DA-IICT | Winter 2025-26
+-- Real data: GMRC stations, BRTS/AMTS/GSRTC routes & fares
+-- Dummy data: Gujarati passenger names, staff, transactions
+
+GROUP MEMBERS:
+Hari Sharma: 202401195
+Arjunsinh Vaghela: 202401235
+Tirth Ditani: 202401417
+Neeti Gunsai: 202401423
+Rudra Bhatt: 202401461
+
+
+1. CITY 
+-- Schema: city_id, city_name, city_state
+INSERT INTO City VALUES (1,'Ahmedabad','Gujarat');
+INSERT INTO City VALUES (2,'Gandhinagar','Gujarat');
+
+2. TRANSIT OPERATOR 
+-- Schema: operator_id, operator_name, service_type, city_id
+INSERT INTO Transit_Operator VALUES (1,'GMRC','Metro Rail',1);
+INSERT INTO Transit_Operator VALUES (2,'Janmarg BRTS','BRTS',1);
+INSERT INTO Transit_Operator VALUES (3,'AMTS','City Bus',1);
+INSERT INTO Transit_Operator VALUES (4,'GSRTC','State Road Bus',2);
+
+3. STOP (real stations/stops) 
+-- Schema: stop_id, stop_name, stop_type, latitude, longitude, city_id
+INSERT INTO Stop VALUES (1,'Vastral Gam','Metro Station',23.0412,72.6478,1);
+INSERT INTO Stop VALUES (2,'Vastral','Metro Station',23.0390,72.6401,1);
+INSERT INTO Stop VALUES (3,'Rabari Colony','Metro Station',23.0368,72.6321,1);
+INSERT INTO Stop VALUES (4,'Nirant Cross Road','Metro Station',23.0342,72.6241,1);
+INSERT INTO Stop VALUES (5,'Amraiwadi','Metro Station',23.0318,72.6160,1);
+INSERT INTO Stop VALUES (6,'Apparel Park','Metro Station',23.0150,72.6305,1);
+INSERT INTO Stop VALUES (7,'Kankaria East','Metro Station',23.0042,72.6071,1);
+INSERT INTO Stop VALUES (8,'SP Stadium','Metro Station',23.0245,72.5926,1);
+INSERT INTO Stop VALUES (9,'Shahpur','Metro Station',23.0355,72.5893,1);
+INSERT INTO Stop VALUES (10,'Gheekanta','Metro Station',23.0285,72.5875,1);
+INSERT INTO Stop VALUES (11,'Kalupur Railway Station','Metro Station',23.0270,72.5984,1);
+INSERT INTO Stop VALUES (12,'Old High Court','Metro Station',23.0258,72.5945,1);
+INSERT INTO Stop VALUES (13,'Commerce Six Road','Metro Station',23.0354,72.5647,1);
+INSERT INTO Stop VALUES (14,'Doordarshan Kendra','Metro Station',23.0415,72.5604,1);
+INSERT INTO Stop VALUES (15,'Gujarat University','Metro Station',23.0458,72.5528,1);
+INSERT INTO Stop VALUES (16,'Gurukul Road','Metro Station',23.0510,72.5441,1);
+INSERT INTO Stop VALUES (17,'Thaltej','Metro Station',23.0574,72.5101,1);
+INSERT INTO Stop VALUES (18,'Thaltej Gam','Metro Station',23.0591,72.5052,1);
+INSERT INTO Stop VALUES (19,'APMC','Metro Station',22.9912,72.6190,1);
+INSERT INTO Stop VALUES (20,'Jivraj Park','Metro Station',23.0021,72.5778,1);
+INSERT INTO Stop VALUES (21,'Shreyas','Metro Station',23.0101,72.5712,1);
+INSERT INTO Stop VALUES (22,'Paldi','Metro Station',23.0178,72.5695,1);
+INSERT INTO Stop VALUES (23,'Old High Court Red','Metro Station',23.0258,72.5945,1);
+INSERT INTO Stop VALUES (24,'Gandhigram','Metro Station',23.0345,72.5635,1);
+INSERT INTO Stop VALUES (25,'AEC','Metro Station',23.0368,72.5601,1);
+INSERT INTO Stop VALUES (26,'Usmanpura','Metro Station',23.0489,72.5712,1);
+INSERT INTO Stop VALUES (27,'Vadaj','Metro Station',23.0558,72.5778,1);
+INSERT INTO Stop VALUES (28,'Ranip','Metro Station',23.0645,72.5845,1);
+INSERT INTO Stop VALUES (29,'Vijay Nagar','Metro Station',23.0701,72.5912,1);
+INSERT INTO Stop VALUES (30,'Rajiv Nagar','Metro Station',23.0758,72.5978,1);
+INSERT INTO Stop VALUES (31,'Sabarmati','Metro Station',23.0812,72.5845,1);
+INSERT INTO Stop VALUES (32,'Motera Stadium','Metro Station',23.0945,72.5978,1);
+INSERT INTO Stop VALUES (33,'Sector-1 Gandhinagar','Metro Station',23.2156,72.6369,2);
+INSERT INTO Stop VALUES (34,'Infocity','Metro Station',23.1978,72.6412,2);
+INSERT INTO Stop VALUES (35,'Dholakuva Circle','Metro Station',23.1845,72.6401,2);
+INSERT INTO Stop VALUES (36,'Randesan','Metro Station',23.1712,72.6389,2);
+INSERT INTO Stop VALUES (37,'GNLU','Metro Station',23.1578,72.6378,2);
+INSERT INTO Stop VALUES (38,'Raysan','Metro Station',23.1445,72.6312,2);
+INSERT INTO Stop VALUES (39,'Koba Circle','Metro Station',23.1312,72.6245,2);
+INSERT INTO Stop VALUES (40,'Narmada Canal','Metro Station',23.1178,72.6178,2);
+INSERT INTO Stop VALUES (41,'Tapovan Circle','Metro Station',23.1045,72.6112,2);
+INSERT INTO Stop VALUES (42,'Vishwakarma College','Metro Station',23.0912,72.6045,2);
+INSERT INTO Stop VALUES (43,'Koteshwar Road','Metro Station',23.0778,72.5978,2);
+INSERT INTO Stop VALUES (44,'Sector-10A Gandhinagar','Metro Station',23.2012,72.6312,2);
+INSERT INTO Stop VALUES (45,'Sachivalaya','Metro Station',23.2089,72.6289,2);
+INSERT INTO Stop VALUES (46,'PDEU','Metro Station',23.1534,72.6512,2);
+INSERT INTO Stop VALUES (47,'GIFT City','Metro Station',23.1523,72.6801,2);
+INSERT INTO Stop VALUES (50,'RTO Circle','BRTS Station',23.0401,72.5523,1);
+INSERT INTO Stop VALUES (51,'Maninagar Railway','BRTS Station',22.9985,72.6045,1);
+INSERT INTO Stop VALUES (52,'Anjali Vasna','BRTS Station',23.0045,72.5412,1);
+INSERT INTO Stop VALUES (53,'Naroda GIDC','BRTS Station',23.0712,72.6512,1);
+INSERT INTO Stop VALUES (54,'Nehrunagar','BRTS Station',23.0445,72.5645,1);
+INSERT INTO Stop VALUES (55,'Shivranjani','BRTS Station',23.0234,72.5234,1);
+INSERT INTO Stop VALUES (56,'Sola ROB','BRTS Station',23.0634,72.5434,1);
+INSERT INTO Stop VALUES (57,'Chandkheda','BRTS Station',23.1012,72.6145,1);
+INSERT INTO Stop VALUES (58,'Jashodanagar','BRTS Station',23.0145,72.6345,1);
+INSERT INTO Stop VALUES (59,'Memco','BRTS Station',23.0612,72.6412,1);
+INSERT INTO Stop VALUES (60,'Science City Approach','BRTS Station',23.0734,72.5634,1);
+INSERT INTO Stop VALUES (61,'Narol','BRTS Station',22.9812,72.6312,1);
+INSERT INTO Stop VALUES (62,'Ghuma','BRTS Station',23.0112,72.4912,1);
+INSERT INTO Stop VALUES (63,'ISKCON','BRTS Station',23.0312,72.5012,1);
+INSERT INTO Stop VALUES (64,'Delhi Darwaja','BRTS Station',23.0312,72.5812,1);
+INSERT INTO Stop VALUES (65,'Odhav','BRTS Station',23.0412,72.6612,1);
+INSERT INTO Stop VALUES (66,'Pirana','BRTS Station',22.9612,72.5812,1);
+INSERT INTO Stop VALUES (67,'Visat Junction','BRTS Station',23.0912,72.6012,1);
+INSERT INTO Stop VALUES (68,'Town Hall Ellisbridge','BRTS Station',23.0312,72.5712,1);
+INSERT INTO Stop VALUES (69,'Soni ni Chali','BRTS Station',23.0712,72.6212,1);
+INSERT INTO Stop VALUES (80,'Geeta Mandir Bus Stand','Bus Stand',23.0268,72.6034,1);
+INSERT INTO Stop VALUES (81,'Lal Darwaja','Bus Stop',23.0256,72.5876,1);
+INSERT INTO Stop VALUES (82,'Sarkhej','Bus Stop',23.0012,72.5023,1);
+INSERT INTO Stop VALUES (83,'Bopal','Bus Stop',23.0134,72.4878,1);
+INSERT INTO Stop VALUES (84,'Vatva','Bus Stop',22.9812,72.6234,1);
+INSERT INTO Stop VALUES (85,'Odhav AMTS','Bus Stop',23.0412,72.6612,1);
+INSERT INTO Stop VALUES (86,'Maninagar Terminal','Bus Stand',22.9985,72.6045,1);
+INSERT INTO Stop VALUES (87,'Paldi','Bus Stop',23.0178,72.5695,1);
+INSERT INTO Stop VALUES (88,'Vejalpur','Bus Stop',23.0045,72.5312,1);
+INSERT INTO Stop VALUES (89,'Ghatlodia','Bus Stop',23.0712,72.5512,1);
+INSERT INTO Stop VALUES (90,'Hansol','Bus Stop',23.1012,72.6345,1);
+INSERT INTO Stop VALUES (91,'Narol AMTS','Bus Stop',22.9812,72.6312,1);
+INSERT INTO Stop VALUES (92,'Ranip AMTS','Bus Stop',23.0645,72.5845,1);
+INSERT INTO Stop VALUES (93,'Vinzol','Bus Stop',22.9912,72.6512,1);
+INSERT INTO Stop VALUES (100,'Gandhinagar GSRTC Bus Station','Bus Stand',23.2156,72.6369,2);
+INSERT INTO Stop VALUES (101,'Akshardham Bus Parking Sector-30','Bus Stop',23.2312,72.6512,2);
+INSERT INTO Stop VALUES (102,'Infocity CH-0 Circle','Bus Stop',23.1978,72.6412,2);
+INSERT INTO Stop VALUES (103,'Adalaj Crossroads','Bus Stop',23.1345,72.6056,1);
+INSERT INTO Stop VALUES (104,'Krushnanagar Bus Stand','Bus Stand',23.0678,72.6234,1);
+INSERT INTO Stop VALUES (105,'Geeta Mandir GSRTC','Bus Stand',23.0268,72.6034,1);
+INSERT INTO Stop VALUES (106,'Paldi GSRTC Stop','Bus Stop',23.0178,72.5695,1);
+INSERT INTO Stop VALUES (107,'Nehrunagar GSRTC','Bus Stop',23.0445,72.5645,1);
+INSERT INTO Stop VALUES (108,'Maninagar GSRTC','Bus Stop',22.9985,72.6045,1);
+INSERT INTO Stop VALUES (109,'Koba Circle Bus Stop','Bus Stop',23.1312,72.6245,2);
+INSERT INTO Stop VALUES (110,'Sector-1 GSRTC Stop','Bus Stop',23.2156,72.6369,2);
+
+4. INTERCHANGE 
+-- Schema: interchange_id, stop_id, interchange_type, description
+INSERT INTO Interchange VALUES (1,12,'Metro-Metro','Blue & Red Line interchange at Old High Court');
+INSERT INTO Interchange VALUES (2,11,'Metro-Railway','Metro connects to Ahmedabad Junction Railway Station');
+INSERT INTO Interchange VALUES (3,32,'Metro-BRTS','Metro and BRTS interchange at Motera Stadium');
+INSERT INTO Interchange VALUES (4,50,'Metro-BRTS','BRTS and Metro interchange at RTO Circle area');
+INSERT INTO Interchange VALUES (5,19,'Metro-Railway','Red Line connects to APMC railway freight yard');
+INSERT INTO Interchange VALUES (6,62,'Metro-BRTS','Blue Line ISKCON/Ghuma area BRTS connection');
+
+5. DEPOT 
+-- Schema: depot_id, depot_name, address, operator_id, city_id
+INSERT INTO Depot VALUES (1,'Apparel Park Metro Depot','Apparel Park, Narol, Ahmedabad',1,1);
+INSERT INTO Depot VALUES (2,'Motera Metro Depot','Motera, Ahmedabad',1,1);
+INSERT INTO Depot VALUES (3,'Janmarg Naroda Depot','Naroda, Ahmedabad',2,1);
+INSERT INTO Depot VALUES (4,'Janmarg Gyaspur Depot','Gyaspur, Ahmedabad',2,1);
+INSERT INTO Depot VALUES (5,'AMTS Geeta Mandir Depot','Geeta Mandir, Kalupur, Ahmedabad',3,1);
+INSERT INTO Depot VALUES (6,'AMTS Maninagar Depot','Maninagar, Ahmedabad',3,1);
+INSERT INTO Depot VALUES (7,'GSRTC Gandhinagar Central Depot','Sector-11, Gandhinagar',4,2);
+INSERT INTO Depot VALUES (8,'GSRTC Krushnanagar Depot','Krushnanagar, Ahmedabad',4,1);
+
+ 6. METRO LINE 
+-- Schema: line_id, line_name, line_code, operator_id
+INSERT INTO Metro_Line VALUES (1,'Blue Line','BL',1);
+INSERT INTO Metro_Line VALUES (2,'Red Line','RL',1);
+INSERT INTO Metro_Line VALUES (3,'Yellow Line','YL',1);
+INSERT INTO Metro_Line VALUES (4,'Violet Line','VL',1);
+
+ 7. FARE ZONE 
+-- Schema: zone_id, zone_name, operator_id
+INSERT INTO Fare_Zone VALUES (1,'Zone 1 (0-2 km)',1);
+INSERT INTO Fare_Zone VALUES (2,'Zone 2 (2-5 km)',1);
+INSERT INTO Fare_Zone VALUES (3,'Zone 3 (5-9 km)',1);
+INSERT INTO Fare_Zone VALUES (4,'Zone 4 (9-14 km)',1);
+INSERT INTO Fare_Zone VALUES (5,'Zone 5 (14-19 km)',1);
+INSERT INTO Fare_Zone VALUES (6,'Zone 6 (19+ km)',1);
+INSERT INTO Fare_Zone VALUES (7,'BRTS Flat Fare',2);
+INSERT INTO Fare_Zone VALUES (8,'AMTS City Fare',3);
+INSERT INTO Fare_Zone VALUES (9,'GSRTC Ordinary Fare',4);
+INSERT INTO Fare_Zone VALUES (10,'GSRTC Express Fare',4);
+
+8. ROUTE (real route numbers and names) 
+-- Schema: route_id, route_number, route_name, distance_km, operator_id, line_id
+-- Note: line_id applies only to Metro routes; bus routes use NULL
+INSERT INTO Route VALUES (1,'BL-01','Blue Line: Vastral Gam – Thaltej Gam',21.16,1,1);
+INSERT INTO Route VALUES (2,'RL-01','Red Line: APMC – Motera Stadium',18.87,1,2);
+INSERT INTO Route VALUES (3,'YL-01','Yellow Line: Motera Stadium – Sector-1 Gandhinagar',15.4,1,3);
+INSERT INTO Route VALUES (4,'VL-01','Violet Line: GNLU – GIFT City',5.42,1,4);
+INSERT INTO Route VALUES (5,'J-01','BRTS Route 1: RTO Circle – Maninagar',12.5,2,NULL);
+INSERT INTO Route VALUES (6,'J-02','BRTS Route 2: Anjali (Vasna) – Naroda',18.2,2,NULL);
+INSERT INTO Route VALUES (7,'J-03','BRTS Route 3: RTO Circle – Naroda',15.8,2,NULL);
+INSERT INTO Route VALUES (8,'J-04','BRTS Route 4: RTO Circle – Delhi Darwaja',8.4,2,NULL);
+INSERT INTO Route VALUES (9,'J-05','BRTS Route 5: Ghuma – ISKCON – Maninagar',22.0,2,NULL);
+INSERT INTO Route VALUES (10,'J-06','BRTS Route 6: Soni ni Chali – Odhav – SP Ring Road',14.6,2,NULL);
+INSERT INTO Route VALUES (11,'J-07','BRTS Route 7: Delhi Darwaja – Science City Approach',11.2,2,NULL);
+INSERT INTO Route VALUES (12,'J-08','BRTS Route 8: Chandkheda – Visat – Maninagar',24.3,2,NULL);
+INSERT INTO Route VALUES (13,'J-09','BRTS Route 9: RTO – Town Hall – Memco – Naroda',16.8,2,NULL);
+INSERT INTO Route VALUES (14,'J-10','BRTS Route 10: Anjali (Vasna) – Kalupur Railway',11.4,2,NULL);
+INSERT INTO Route VALUES (15,'A-31','AMTS Route 31: Geeta Mandir – Bopal',19.5,3,NULL);
+INSERT INTO Route VALUES (16,'A-52','AMTS Route 52: Lal Darwaja – Vatva',14.2,3,NULL);
+INSERT INTO Route VALUES (17,'A-81','AMTS Route 81: Geeta Mandir – Sarkhej',16.8,3,NULL);
+INSERT INTO Route VALUES (18,'A-105','AMTS Route 105: Geeta Mandir – Ghatlodia',17.3,3,NULL);
+INSERT INTO Route VALUES (19,'A-132','AMTS Route 132: Maninagar – Ranip',21.4,3,NULL);
+INSERT INTO Route VALUES (20,'A-155','AMTS Route 155: Lal Darwaja – Narol',15.9,3,NULL);
+INSERT INTO Route VALUES (21,'A-175','AMTS Route 175: Geeta Mandir – Hansol',18.1,3,NULL);
+INSERT INTO Route VALUES (22,'G-101','GSRTC: Gandhinagar Bus Station – Geeta Mandir',28.5,4,NULL);
+INSERT INTO Route VALUES (23,'G-102','GSRTC: Gandhinagar – Maninagar via Paldi',32.1,4,NULL);
+INSERT INTO Route VALUES (24,'G-103','GSRTC: Krushnanagar – Gandhinagar Bus Station',30.8,4,NULL);
+INSERT INTO Route VALUES (25,'G-104','GSRTC Express: Gandhinagar – Geeta Mandir (Express)',28.5,4,NULL);
+
+ 9. ROUTE_STOP 
+-- Schema: route_id, stop_id, sequence_no, zone_id
+INSERT INTO Route_Stop VALUES (1,1,1,1);
+INSERT INTO Route_Stop VALUES (1,2,2,1);
+INSERT INTO Route_Stop VALUES (1,3,3,1);
+INSERT INTO Route_Stop VALUES (1,4,4,2);
+INSERT INTO Route_Stop VALUES (1,5,5,2);
+INSERT INTO Route_Stop VALUES (1,6,6,2);
+INSERT INTO Route_Stop VALUES (1,7,7,3);
+INSERT INTO Route_Stop VALUES (1,8,8,3);
+INSERT INTO Route_Stop VALUES (1,9,9,3);
+INSERT INTO Route_Stop VALUES (1,10,10,4);
+INSERT INTO Route_Stop VALUES (1,11,11,4);
+INSERT INTO Route_Stop VALUES (1,12,12,4);
+INSERT INTO Route_Stop VALUES (1,13,13,5);
+INSERT INTO Route_Stop VALUES (1,14,14,5);
+INSERT INTO Route_Stop VALUES (1,15,15,5);
+INSERT INTO Route_Stop VALUES (1,16,16,6);
+INSERT INTO Route_Stop VALUES (1,17,17,6);
+INSERT INTO Route_Stop VALUES (1,18,18,6);
+INSERT INTO Route_Stop VALUES (2,19,1,1);
+INSERT INTO Route_Stop VALUES (2,20,2,1);
+INSERT INTO Route_Stop VALUES (2,21,3,2);
+INSERT INTO Route_Stop VALUES (2,22,4,2);
+INSERT INTO Route_Stop VALUES (2,23,5,3);
+INSERT INTO Route_Stop VALUES (2,24,6,3);
+INSERT INTO Route_Stop VALUES (2,25,7,4);
+INSERT INTO Route_Stop VALUES (2,26,8,4);
+INSERT INTO Route_Stop VALUES (2,27,9,5);
+INSERT INTO Route_Stop VALUES (2,28,10,5);
+INSERT INTO Route_Stop VALUES (2,29,11,6);
+INSERT INTO Route_Stop VALUES (2,30,12,6);
+INSERT INTO Route_Stop VALUES (2,31,13,6);
+INSERT INTO Route_Stop VALUES (2,32,14,6);
+INSERT INTO Route_Stop VALUES (3,32,1,4);
+INSERT INTO Route_Stop VALUES (3,38,2,4);
+INSERT INTO Route_Stop VALUES (3,37,3,5);
+INSERT INTO Route_Stop VALUES (3,36,4,5);
+INSERT INTO Route_Stop VALUES (3,35,5,6);
+INSERT INTO Route_Stop VALUES (3,34,6,6);
+INSERT INTO Route_Stop VALUES (3,40,7,6);
+INSERT INTO Route_Stop VALUES (3,41,8,6);
+INSERT INTO Route_Stop VALUES (3,42,9,6);
+INSERT INTO Route_Stop VALUES (3,43,10,6);
+INSERT INTO Route_Stop VALUES (3,44,11,6);
+INSERT INTO Route_Stop VALUES (3,45,12,6);
+INSERT INTO Route_Stop VALUES (3,33,13,6);
+INSERT INTO Route_Stop VALUES (4,37,1,5);
+INSERT INTO Route_Stop VALUES (4,46,2,5);
+INSERT INTO Route_Stop VALUES (4,47,3,5);
+INSERT INTO Route_Stop VALUES (5,50,1,7);
+INSERT INTO Route_Stop VALUES (5,54,2,7);
+INSERT INTO Route_Stop VALUES (5,68,3,7);
+INSERT INTO Route_Stop VALUES (5,51,4,7);
+INSERT INTO Route_Stop VALUES (6,52,1,7);
+INSERT INTO Route_Stop VALUES (6,55,2,7);
+INSERT INTO Route_Stop VALUES (6,50,3,7);
+INSERT INTO Route_Stop VALUES (6,59,4,7);
+INSERT INTO Route_Stop VALUES (6,53,5,7);
+INSERT INTO Route_Stop VALUES (7,50,1,7);
+INSERT INTO Route_Stop VALUES (7,68,2,7);
+INSERT INTO Route_Stop VALUES (7,59,3,7);
+INSERT INTO Route_Stop VALUES (7,53,4,7);
+INSERT INTO Route_Stop VALUES (8,50,1,7);
+INSERT INTO Route_Stop VALUES (8,64,2,7);
+INSERT INTO Route_Stop VALUES (9,62,1,7);
+INSERT INTO Route_Stop VALUES (9,63,2,7);
+INSERT INTO Route_Stop VALUES (9,55,3,7);
+INSERT INTO Route_Stop VALUES (9,50,4,7);
+INSERT INTO Route_Stop VALUES (9,51,5,7);
+INSERT INTO Route_Stop VALUES (10,69,1,7);
+INSERT INTO Route_Stop VALUES (10,65,2,7);
+INSERT INTO Route_Stop VALUES (10,67,3,7);
+INSERT INTO Route_Stop VALUES (11,64,1,7);
+INSERT INTO Route_Stop VALUES (11,60,2,7);
+INSERT INTO Route_Stop VALUES (12,57,1,7);
+INSERT INTO Route_Stop VALUES (12,67,2,7);
+INSERT INTO Route_Stop VALUES (12,51,3,7);
+INSERT INTO Route_Stop VALUES (13,50,1,7);
+INSERT INTO Route_Stop VALUES (13,68,2,7);
+INSERT INTO Route_Stop VALUES (13,59,3,7);
+INSERT INTO Route_Stop VALUES (13,53,4,7);
+INSERT INTO Route_Stop VALUES (14,52,1,7);
+INSERT INTO Route_Stop VALUES (14,50,2,7);
+INSERT INTO Route_Stop VALUES (14,11,3,7);
+INSERT INTO Route_Stop VALUES (15,80,1,8);
+INSERT INTO Route_Stop VALUES (15,81,2,8);
+INSERT INTO Route_Stop VALUES (15,82,3,8);
+INSERT INTO Route_Stop VALUES (15,83,4,8);
+INSERT INTO Route_Stop VALUES (16,81,1,8);
+INSERT INTO Route_Stop VALUES (16,80,2,8);
+INSERT INTO Route_Stop VALUES (16,85,3,8);
+INSERT INTO Route_Stop VALUES (16,84,4,8);
+INSERT INTO Route_Stop VALUES (17,80,1,8);
+INSERT INTO Route_Stop VALUES (17,87,2,8);
+INSERT INTO Route_Stop VALUES (17,82,3,8);
+INSERT INTO Route_Stop VALUES (18,80,1,8);
+INSERT INTO Route_Stop VALUES (18,81,2,8);
+INSERT INTO Route_Stop VALUES (18,89,3,8);
+INSERT INTO Route_Stop VALUES (19,86,1,8);
+INSERT INTO Route_Stop VALUES (19,87,2,8);
+INSERT INTO Route_Stop VALUES (19,25,3,8);
+INSERT INTO Route_Stop VALUES (19,92,4,8);
+INSERT INTO Route_Stop VALUES (20,81,1,8);
+INSERT INTO Route_Stop VALUES (20,80,2,8);
+INSERT INTO Route_Stop VALUES (20,61,3,8);
+INSERT INTO Route_Stop VALUES (20,91,4,8);
+INSERT INTO Route_Stop VALUES (21,80,1,8);
+INSERT INTO Route_Stop VALUES (21,85,2,8);
+INSERT INTO Route_Stop VALUES (21,90,3,8);
+INSERT INTO Route_Stop VALUES (22,100,1,9);
+INSERT INTO Route_Stop VALUES (22,109,2,9);
+INSERT INTO Route_Stop VALUES (22,103,3,9);
+INSERT INTO Route_Stop VALUES (22,105,4,9);
+INSERT INTO Route_Stop VALUES (23,100,1,9);
+INSERT INTO Route_Stop VALUES (23,110,2,9);
+INSERT INTO Route_Stop VALUES (23,108,3,9);
+INSERT INTO Route_Stop VALUES (24,104,1,9);
+INSERT INTO Route_Stop VALUES (24,103,2,9);
+INSERT INTO Route_Stop VALUES (24,100,3,9);
+INSERT INTO Route_Stop VALUES (25,100,1,10);
+INSERT INTO Route_Stop VALUES (25,105,2,10);
+
+ 10. VEHICLE 
+-- Schema: vehicle_id, registration_no, capacity, manufacture_year, manufacturer_name,
+--         manufacturer_info, status, operator_id, depot_id
+INSERT INTO Vehicle VALUES (1,'GJ-METRO-BL-01',1200,2018,'BEML','BEML 3-car EMU Set','Active',1,1);
+INSERT INTO Vehicle VALUES (2,'GJ-METRO-BL-02',1200,2018,'BEML','BEML 3-car EMU Set','Active',1,1);
+INSERT INTO Vehicle VALUES (3,'GJ-METRO-BL-03',1200,2019,'BEML','BEML 3-car EMU Set','Active',1,1);
+INSERT INTO Vehicle VALUES (4,'GJ-METRO-BL-04',1200,2019,'BEML','BEML 3-car EMU Set','Active',1,1);
+INSERT INTO Vehicle VALUES (5,'GJ-METRO-RL-01',1200,2022,'Alstom','Alstom Metropolis 3-car','Active',1,2);
+INSERT INTO Vehicle VALUES (6,'GJ-METRO-RL-02',1200,2022,'Alstom','Alstom Metropolis 3-car','Active',1,2);
+INSERT INTO Vehicle VALUES (7,'GJ-METRO-RL-03',1200,2022,'Alstom','Alstom Metropolis 3-car','Active',1,2);
+INSERT INTO Vehicle VALUES (8,'GJ-METRO-YL-01',1200,2024,'CRRC','CRRC 3-car EMU Set','Active',1,2);
+INSERT INTO Vehicle VALUES (9,'GJ-METRO-YL-02',1200,2024,'CRRC','CRRC 3-car EMU Set','Active',1,2);
+INSERT INTO Vehicle VALUES (10,'GJ-METRO-VL-01',1200,2024,'CRRC','CRRC 3-car EMU Set','Active',1,2);
+INSERT INTO Vehicle VALUES (11,'GJ-01-BT-2301',60,2021,'Tata Motors','Tata Starbus Ultra AC','Active',2,3);
+INSERT INTO Vehicle VALUES (12,'GJ-01-BT-2302',60,2021,'Tata Motors','Tata Starbus Ultra AC','Active',2,3);
+INSERT INTO Vehicle VALUES (13,'GJ-01-BT-2303',40,2020,'Tata Motors','Tata Starbus Non-AC','Active',2,3);
+INSERT INTO Vehicle VALUES (14,'GJ-01-BT-2304',60,2022,'Tata Motors','Tata Starbus Ultra AC','Active',2,4);
+INSERT INTO Vehicle VALUES (15,'GJ-01-BT-2305',40,2019,'Ashok Leyland','Ashok Leyland Viking','Active',2,4);
+INSERT INTO Vehicle VALUES (16,'GJ-01-BT-2306',60,2022,'Tata Motors','Tata Starbus Ultra AC','Active',2,4);
+INSERT INTO Vehicle VALUES (17,'GJ-01-BT-2307',40,2020,'Ashok Leyland','Ashok Leyland Viking','Active',2,3);
+INSERT INTO Vehicle VALUES (18,'GJ-01-BT-2308',60,2023,'Tata Motors','Tata Starbus Ultra AC','Active',2,3);
+INSERT INTO Vehicle VALUES (19,'GJ-01-AT-1001',50,2018,'Tata Motors','JNNURM CNG Bus Tata','Active',3,5);
+INSERT INTO Vehicle VALUES (20,'GJ-01-AT-1002',50,2019,'Tata Motors','JNNURM CNG Bus Tata','Active',3,6);
+INSERT INTO Vehicle VALUES (21,'GJ-01-AT-1003',55,2021,'Volvo','Volvo 8400 CNG AC','Active',3,5);
+INSERT INTO Vehicle VALUES (22,'GJ-01-AT-1004',50,2020,'Tata Motors','JNNURM CNG Bus Tata','Active',3,5);
+INSERT INTO Vehicle VALUES (23,'GJ-01-AT-1005',50,2021,'Ashok Leyland','Ashok Leyland CNG','Active',3,6);
+INSERT INTO Vehicle VALUES (24,'GJ-01-AT-1006',55,2022,'Volvo','Volvo 8400 CNG AC','Active',3,6);
+INSERT INTO Vehicle VALUES (25,'GJ-18-GT-5501',45,2020,'Ashok Leyland','Ashok Leyland Viking BS6','Active',4,7);
+INSERT INTO Vehicle VALUES (26,'GJ-18-GT-5502',45,2021,'Ashok Leyland','Ashok Leyland Viking BS6','Active',4,7);
+INSERT INTO Vehicle VALUES (27,'GJ-18-GT-5503',49,2022,'Volvo','Volvo 9400 AC Luxury','Active',4,7);
+INSERT INTO Vehicle VALUES (28,'GJ-18-GT-5504',45,2020,'Ashok Leyland','Ashok Leyland BS6 Non-AC','Active',4,8);
+INSERT INTO Vehicle VALUES (29,'GJ-18-GT-5505',49,2023,'Volvo','Volvo 9400 AC Luxury','Active',4,8);
+INSERT INTO Vehicle VALUES (30,'GJ-18-GT-5506',45,2021,'Ashok Leyland','Ashok Leyland Viking BS6','Active',4,8);
+
+ 11. BUS 
+-- Schema: vehicle_id, fuel_type, bus_type
+INSERT INTO Bus VALUES (11,'Diesel','AC Standard BRTS');
+INSERT INTO Bus VALUES (12,'Diesel','AC Standard BRTS');
+INSERT INTO Bus VALUES (13,'Diesel','Non-AC Standard BRTS');
+INSERT INTO Bus VALUES (14,'CNG','AC Standard BRTS');
+INSERT INTO Bus VALUES (15,'Diesel','Non-AC Standard BRTS');
+INSERT INTO Bus VALUES (16,'CNG','AC Standard BRTS');
+INSERT INTO Bus VALUES (17,'Diesel','Non-AC Standard BRTS');
+INSERT INTO Bus VALUES (18,'CNG','AC Standard BRTS');
+INSERT INTO Bus VALUES (19,'CNG','City Bus Non-AC');
+INSERT INTO Bus VALUES (20,'CNG','City Bus Non-AC');
+INSERT INTO Bus VALUES (21,'CNG','City Bus AC');
+INSERT INTO Bus VALUES (22,'CNG','City Bus Non-AC');
+INSERT INTO Bus VALUES (23,'CNG','City Bus Non-AC');
+INSERT INTO Bus VALUES (24,'CNG','City Bus AC');
+INSERT INTO Bus VALUES (25,'Diesel','Inter-City Non-AC');
+INSERT INTO Bus VALUES (26,'Diesel','Inter-City Non-AC');
+INSERT INTO Bus VALUES (27,'Diesel','Inter-City AC Luxury');
+INSERT INTO Bus VALUES (28,'Diesel','Inter-City Non-AC');
+INSERT INTO Bus VALUES (29,'Diesel','Inter-City AC Luxury');
+INSERT INTO Bus VALUES (30,'Diesel','Inter-City Non-AC');
+
+ 12. METRO TRAIN 
+-- Schema: vehicle_id, rake_number, num_coaches
+INSERT INTO Metro_Train VALUES (1,'BL-T01',3);
+INSERT INTO Metro_Train VALUES (2,'BL-T02',3);
+INSERT INTO Metro_Train VALUES (3,'BL-T03',3);
+INSERT INTO Metro_Train VALUES (4,'BL-T04',3);
+INSERT INTO Metro_Train VALUES (5,'RL-T01',3);
+INSERT INTO Metro_Train VALUES (6,'RL-T02',3);
+INSERT INTO Metro_Train VALUES (7,'RL-T03',3);
+INSERT INTO Metro_Train VALUES (8,'YL-T01',3);
+INSERT INTO Metro_Train VALUES (9,'YL-T02',3);
+INSERT INTO Metro_Train VALUES (10,'VL-T01',3);
+
+13. MAINTENANCE 
+-- Schema: maintenance_id, vehicle_id, start_date, end_date, maintenance_type, description
+INSERT INTO Maintenance VALUES (1,1,'2024-01-10','2024-01-11','Scheduled 6-Month','Routine 6-month check BL-T01');
+INSERT INTO Maintenance VALUES (2,2,'2024-02-05','2024-02-05','Wheel & Brake Inspection','Wheel and brake check BL-T02');
+INSERT INTO Maintenance VALUES (3,11,'2024-03-12','2024-03-14','AC Overhaul','Full AC overhaul BRTS bus 2301');
+INSERT INTO Maintenance VALUES (4,25,'2024-04-20','2024-04-21','Engine Service','Engine service GSRTC bus 5501');
+INSERT INTO Maintenance VALUES (5,5,'2024-05-01','2024-05-02','Pantograph Replace','Pantograph replacement RL-T01');
+INSERT INTO Maintenance VALUES (6,12,'2024-06-15','2024-06-15','Tyre Replacement','4-tyre replacement BRTS bus 2302');
+INSERT INTO Maintenance VALUES (7,19,'2024-07-03','2024-07-05','Body Repair','Body damage repair AMTS bus AT-1001');
+INSERT INTO Maintenance VALUES (8,26,'2024-08-10','2024-08-15','Annual Overhaul','Annual overhaul GSRTC bus 5502');
+INSERT INTO Maintenance VALUES (9,8,'2024-09-22','2024-09-23','Signal System Check','Signaling system YL-T01');
+INSERT INTO Maintenance VALUES (10,13,'2024-10-05','2024-10-05','Emergency Brake Inspect','Emergency brake BRTS bus 2303');
+INSERT INTO Maintenance VALUES (11,3,'2024-10-20','2024-10-21','Scheduled 6-Month','6-month check BL-T03');
+INSERT INTO Maintenance VALUES (12,6,'2024-11-01','2024-11-03','Interior Refurbishment','Seat & interior refurb RL-T02');
+INSERT INTO Maintenance VALUES (13,20,'2024-11-15','2024-11-15','Fuel System Service','Fuel system AMTS bus AT-1002');
+INSERT INTO Maintenance VALUES (14,4,'2024-12-02','2024-12-03','CCTV System Repair','CCTV cameras BL-T04');
+INSERT INTO Maintenance VALUES (15,27,'2024-12-10','2024-12-14','Scheduled Annual','Annual overhaul GSRTC bus 5503');
+INSERT INTO Maintenance VALUES (16,9,'2024-12-20','2024-12-20','Door Mechanism Fix','Sliding door fix YL-T02');
+INSERT INTO Maintenance VALUES (17,21,'2025-01-05','2025-01-08','Engine Overhaul','Engine overhaul AMTS AT-1003');
+INSERT INTO Maintenance VALUES (18,7,'2025-01-15','2025-01-15','Battery Replace','Battery replacement RL-T03');
+INSERT INTO Maintenance VALUES (19,14,'2025-02-01','2025-02-02','Scheduled 6-Month','6-month check BRTS 2304');
+INSERT INTO Maintenance VALUES (20,28,'2025-02-20','2025-02-20','AC Recharge & Service','AC recharge GSRTC 5504');
+
+ 14. STAFF (Gujarati names) 
+-- Schema: staff_id, first_name, middle_name, last_name, role, contact, date_of_joining, operator_id, depot_id
+INSERT INTO Staff VALUES (1,'Dhruv',NULL,'Prajapati','Motorman','9825011101','2019-03-01',1,1);
+INSERT INTO Staff VALUES (2,'Kalpesh',NULL,'Solanki','Motorman','9825011102','2019-03-01',1,1);
+INSERT INTO Staff VALUES (3,'Nilesh',NULL,'Rathod','Motorman','9825011103','2022-10-01',1,2);
+INSERT INTO Staff VALUES (4,'Bhavesh',NULL,'Vaghela','Motorman','9825011104','2022-10-01',1,2);
+INSERT INTO Staff VALUES (5,'Raju',NULL,'Thakor','Motorman','9825011105','2024-09-01',1,2);
+INSERT INTO Staff VALUES (6,'Himanshu',NULL,'Parmar','Motorman','9825011106','2022-10-01',1,2);
+INSERT INTO Staff VALUES (7,'Jatin',NULL,'Mer','Motorman','9825011107','2024-09-01',1,2);
+INSERT INTO Staff VALUES (8,'Manish',NULL,'Chauhan','Driver','9825022201','2020-06-15',2,3);
+INSERT INTO Staff VALUES (9,'Suresh',NULL,'Parmar','Driver','9825022202','2020-08-20',2,3);
+INSERT INTO Staff VALUES (10,'Dinesh',NULL,'Makwana','Driver','9825022203','2021-01-10',2,4);
+INSERT INTO Staff VALUES (11,'Pravin',NULL,'Gamit','Driver','9825022204','2021-03-22',2,4);
+INSERT INTO Staff VALUES (12,'Sanjay',NULL,'Baria','Driver','9825022205','2022-05-01',2,3);
+INSERT INTO Staff VALUES (13,'Deepak',NULL,'Rohit','Driver','9825022206','2022-07-15',2,4);
+INSERT INTO Staff VALUES (14,'Harsha',NULL,'Patel','Conductor','9825033301','2020-07-01',2,3);
+INSERT INTO Staff VALUES (15,'Rekha',NULL,'Desai','Conductor','9825033302','2020-09-15',2,4);
+INSERT INTO Staff VALUES (16,'Jignesh',NULL,'Chavda','Conductor','9825033303','2021-02-01',2,3);
+INSERT INTO Staff VALUES (17,'Minal',NULL,'Thakkar','Conductor','9825033304','2022-06-01',2,4);
+INSERT INTO Staff VALUES (18,'Bhumi',NULL,'Soni','Conductor','9825033305','2022-08-10',2,3);
+INSERT INTO Staff VALUES (19,'Ramesh',NULL,'Tadvi','Driver','9825044401','2018-05-10',3,5);
+INSERT INTO Staff VALUES (20,'Varsha',NULL,'Nayak','Conductor','9825044402','2018-06-01',3,5);
+INSERT INTO Staff VALUES (21,'Ashok',NULL,'Baria','Driver','9825044403','2019-11-20',3,6);
+INSERT INTO Staff VALUES (22,'Meena',NULL,'Rohit','Conductor','9825044404','2019-12-05',3,6);
+INSERT INTO Staff VALUES (23,'Paresh',NULL,'Vasava','Driver','9825044405','2021-03-10',3,5);
+INSERT INTO Staff VALUES (24,'Lalita',NULL,'Chaudhary','Conductor','9825044406','2021-04-01',3,6);
+INSERT INTO Staff VALUES (25,'Gopal',NULL,'Vasava','Driver','9825055501','2017-08-01',4,7);
+INSERT INTO Staff VALUES (26,'Shanta',NULL,'Bhil','Conductor','9825055502','2017-09-01',4,7);
+INSERT INTO Staff VALUES (27,'Rakesh',NULL,'Tadvi','Driver','9825055503','2019-03-15',4,8);
+INSERT INTO Staff VALUES (28,'Geeta',NULL,'Gamit','Conductor','9825055504','2019-04-01',4,8);
+INSERT INTO Staff VALUES (29,'Virendrasinh',NULL,'Gohil','Driver','9825055505','2020-07-20',4,7);
+INSERT INTO Staff VALUES (30,'Komal',NULL,'Rathwa','Conductor','9825055506','2020-08-01',4,8);
+
+ 15. STAFF_CERTIFICATION 
+-- Schema: staff_id, certification, issued_date, expiry_date
+INSERT INTO Staff_Certification VALUES (1,'GMRC Motorman Cert Lvl-1','2019-03-01','2024-03-01');
+INSERT INTO Staff_Certification VALUES (2,'GMRC Motorman Cert Lvl-1','2019-03-01','2024-03-01');
+INSERT INTO Staff_Certification VALUES (3,'GMRC Motorman Cert Lvl-2','2022-10-01','2027-10-01');
+INSERT INTO Staff_Certification VALUES (4,'GMRC Motorman Cert Lvl-2','2022-10-01','2027-10-01');
+INSERT INTO Staff_Certification VALUES (5,'GMRC Motorman Cert Lvl-1','2024-09-01','2029-09-01');
+INSERT INTO Staff_Certification VALUES (6,'GMRC Motorman Cert Lvl-2','2022-10-01','2027-10-01');
+INSERT INTO Staff_Certification VALUES (7,'GMRC Motorman Cert Lvl-1','2024-09-01','2029-09-01');
+INSERT INTO Staff_Certification VALUES (8,'HMV License Gujarat','2020-06-15','2030-06-15');
+INSERT INTO Staff_Certification VALUES (9,'HMV License Gujarat','2020-08-20','2030-08-20');
+INSERT INTO Staff_Certification VALUES (10,'HMV License Gujarat','2021-01-10','2031-01-10');
+INSERT INTO Staff_Certification VALUES (11,'HMV License Gujarat','2021-03-22','2031-03-22');
+INSERT INTO Staff_Certification VALUES (12,'HMV License Gujarat','2022-05-01','2032-05-01');
+INSERT INTO Staff_Certification VALUES (13,'HMV License Gujarat','2022-07-15','2032-07-15');
+INSERT INTO Staff_Certification VALUES (14,'BRTS Conductor Cert','2020-07-01','2025-07-01');
+INSERT INTO Staff_Certification VALUES (15,'BRTS Conductor Cert','2020-09-15','2025-09-15');
+INSERT INTO Staff_Certification VALUES (16,'BRTS Conductor Cert','2021-02-01','2026-02-01');
+INSERT INTO Staff_Certification VALUES (17,'BRTS Conductor Cert','2022-06-01','2027-06-01');
+INSERT INTO Staff_Certification VALUES (18,'BRTS Conductor Cert','2022-08-10','2027-08-10');
+INSERT INTO Staff_Certification VALUES (19,'HMV License Gujarat','2018-05-10','2028-05-10');
+INSERT INTO Staff_Certification VALUES (20,'AMTS Conductor Cert','2018-06-01','2023-06-01');
+INSERT INTO Staff_Certification VALUES (21,'HMV License Gujarat','2019-11-20','2029-11-20');
+INSERT INTO Staff_Certification VALUES (22,'AMTS Conductor Cert','2019-12-05','2024-12-05');
+INSERT INTO Staff_Certification VALUES (23,'HMV License Gujarat','2021-03-10','2031-03-10');
+INSERT INTO Staff_Certification VALUES (24,'AMTS Conductor Cert','2021-04-01','2026-04-01');
+INSERT INTO Staff_Certification VALUES (25,'HMV License Gujarat','2017-08-01','2027-08-01');
+INSERT INTO Staff_Certification VALUES (26,'GSRTC Conductor Cert','2017-09-01','2022-09-01');
+INSERT INTO Staff_Certification VALUES (27,'HMV License Gujarat','2019-03-15','2029-03-15');
+INSERT INTO Staff_Certification VALUES (28,'GSRTC Conductor Cert','2019-04-01','2024-04-01');
+INSERT INTO Staff_Certification VALUES (29,'HMV License Gujarat','2020-07-20','2030-07-20');
+INSERT INTO Staff_Certification VALUES (30,'GSRTC Conductor Cert','2020-08-01','2025-08-01');
+
+16. DRIVER / CONDUCTOR / MOTORMAN 
+-- Motorman: schema: staff_id, metro_license_no
+INSERT INTO Motorman VALUES (1,'GJ-MM-2019-001');
+INSERT INTO Motorman VALUES (2,'GJ-MM-2019-002');
+INSERT INTO Motorman VALUES (3,'GJ-MM-2022-003');
+INSERT INTO Motorman VALUES (4,'GJ-MM-2022-004');
+INSERT INTO Motorman VALUES (5,'GJ-MM-2024-005');
+INSERT INTO Motorman VALUES (6,'GJ-MM-2022-006');
+INSERT INTO Motorman VALUES (7,'GJ-MM-2024-007');
+-- Driver: schema: staff_id, license_no
+INSERT INTO Driver VALUES (8,'GJ-DL-0023451');
+INSERT INTO Driver VALUES (9,'GJ-DL-0031872');
+INSERT INTO Driver VALUES (10,'GJ-DL-0045209');
+INSERT INTO Driver VALUES (11,'GJ-DL-0067834');
+INSERT INTO Driver VALUES (12,'GJ-DL-0089123');
+INSERT INTO Driver VALUES (13,'GJ-DL-0091045');
+INSERT INTO Driver VALUES (19,'GJ-DL-0012389');
+INSERT INTO Driver VALUES (21,'GJ-DL-0098723');
+INSERT INTO Driver VALUES (23,'GJ-DL-0056671');
+INSERT INTO Driver VALUES (25,'GJ-DL-0076543');
+INSERT INTO Driver VALUES (27,'GJ-DL-0034521');
+INSERT INTO Driver VALUES (29,'GJ-DL-0045678');
+-- Conductor: schema: staff_id, badge_no
+INSERT INTO Conductor VALUES (14,'BRTS-C-1001');
+INSERT INTO Conductor VALUES (15,'BRTS-C-1002');
+INSERT INTO Conductor VALUES (16,'BRTS-C-1003');
+INSERT INTO Conductor VALUES (17,'BRTS-C-1004');
+INSERT INTO Conductor VALUES (18,'BRTS-C-1005');
+INSERT INTO Conductor VALUES (20,'AMTS-C-2001');
+INSERT INTO Conductor VALUES (22,'AMTS-C-2002');
+INSERT INTO Conductor VALUES (24,'AMTS-C-2003');
+INSERT INTO Conductor VALUES (26,'GSRTC-C-3001');
+INSERT INTO Conductor VALUES (28,'GSRTC-C-3002');
+INSERT INTO Conductor VALUES (30,'GSRTC-C-3003');
+
+17. PASSENGER (40 Gujarati-named passengers) 
+-- Schema: passenger_id, first_name, middle_name, last_name, email, date_of_birth, concession_type, city_id
+INSERT INTO Passenger VALUES (1,'Aarav',NULL,'Shah','aarav.shah@gmail.com','2000-04-15','General',1);
+INSERT INTO Passenger VALUES (2,'Priya',NULL,'Patel','priya.patel@yahoo.com','1995-08-22','General',1);
+INSERT INTO Passenger VALUES (3,'Mihir',NULL,'Desai','mihir.desai@gmail.com','2004-01-10','Student',1);
+INSERT INTO Passenger VALUES (4,'Nidhi',NULL,'Joshi','nidhi.joshi@gmail.com','1958-06-30','Senior',1);
+INSERT INTO Passenger VALUES (5,'Krupal',NULL,'Mehta','krupal.mehta@outlook.com','1992-11-05','General',1);
+INSERT INTO Passenger VALUES (6,'Dipika',NULL,'Trivedi','dipika.trivedi@gmail.com','1988-03-18','General',1);
+INSERT INTO Passenger VALUES (7,'Yash',NULL,'Agrawal','yash.agrawal@gmail.com','2003-09-25','Student',1);
+INSERT INTO Passenger VALUES (8,'Kavya',NULL,'Bhatt','kavya.bhatt@gmail.com','1975-12-12','General',1);
+INSERT INTO Passenger VALUES (9,'Rohan',NULL,'Modi','rohan.modi@rediffmail.com','1999-07-04','General',1);
+INSERT INTO Passenger VALUES (10,'Shreya',NULL,'Gandhi','shreya.gandhi@gmail.com','2005-02-28','Student',1);
+INSERT INTO Passenger VALUES (11,'Tanvi',NULL,'Pandya','tanvi.pandya@gmail.com','1950-10-01','Senior',2);
+INSERT INTO Passenger VALUES (12,'Jigar',NULL,'Soni','jigar.soni@gmail.com','1985-05-14','General',1);
+INSERT INTO Passenger VALUES (13,'Pooja',NULL,'Raval','pooja.raval@gmail.com','1997-08-09','Differently-Abled',1);
+INSERT INTO Passenger VALUES (14,'Darshan',NULL,'Nayak','darshan.nayak@hotmail.com','2002-03-21','Student',1);
+INSERT INTO Passenger VALUES (15,'Bhumika',NULL,'Chaudhary','bhumika.chaudhary@gmail.com','1990-06-17','General',1);
+INSERT INTO Passenger VALUES (16,'Vatsal',NULL,'Parikh','vatsal.parikh@gmail.com','1983-01-30','General',2);
+INSERT INTO Passenger VALUES (17,'Riya',NULL,'Kapoor','riya.kapoor@gmail.com','2001-11-11','Student',1);
+INSERT INTO Passenger VALUES (18,'Hardik',NULL,'Thakkar','hardik.thakkar@gmail.com','1978-04-05','General',1);
+INSERT INTO Passenger VALUES (19,'Foram',NULL,'Chauhan','foram.chauhan@gmail.com','1965-09-20','Senior',1);
+INSERT INTO Passenger VALUES (20,'Nikhil',NULL,'Vasava','nikhil.vasava@gmail.com','1993-12-08','General',1);
+INSERT INTO Passenger VALUES (21,'Dhruvil',NULL,'Shah','dhruvil.shah@gmail.com','2003-06-14','Student',1);
+INSERT INTO Passenger VALUES (22,'Hetvi',NULL,'Patel','hetvi.patel@gmail.com','1991-03-28','General',1);
+INSERT INTO Passenger VALUES (23,'Raj',NULL,'Raval','raj.raval@gmail.com','1980-11-09','General',1);
+INSERT INTO Passenger VALUES (24,'Khushi',NULL,'Joshi','khushi.joshi@gmail.com','2004-07-22','Student',2);
+INSERT INTO Passenger VALUES (25,'Parth',NULL,'Trivedi','parth.trivedi@gmail.com','1997-02-17','General',1);
+INSERT INTO Passenger VALUES (26,'Neel',NULL,'Bhatt','neel.bhatt@gmail.com','1972-08-05','General',1);
+INSERT INTO Passenger VALUES (27,'Mona',NULL,'Mehta','mona.mehta@gmail.com','1948-12-25','Senior',1);
+INSERT INTO Passenger VALUES (28,'Jayesh',NULL,'Desai','jayesh.desai@gmail.com','1988-09-11','General',1);
+INSERT INTO Passenger VALUES (29,'Shraddha',NULL,'Agrawal','shraddha.agrawal@gmail.com','2002-04-03','Student',1);
+INSERT INTO Passenger VALUES (30,'Karan',NULL,'Gandhi','karan.gandhi@gmail.com','1995-06-18','General',1);
+INSERT INTO Passenger VALUES (31,'Ishani',NULL,'Solanki','ishani.solanki@gmail.com','2001-10-30','Student',1);
+INSERT INTO Passenger VALUES (32,'Viral',NULL,'Prajapati','viral.prajapati@gmail.com','1985-01-14','General',1);
+INSERT INTO Passenger VALUES (33,'Deepa',NULL,'Chauhan','deepa.chauhan@gmail.com','1953-07-19','Senior',1);
+INSERT INTO Passenger VALUES (34,'Arjun',NULL,'Vaghela','arjun.vaghela@gmail.com','2000-12-02','General',1);
+INSERT INTO Passenger VALUES (35,'Jhanvi',NULL,'Thakkar','jhanvi.thakkar@gmail.com','2005-08-16','Student',1);
+INSERT INTO Passenger VALUES (36,'Manav',NULL,'Parikh','manav.parikh@gmail.com','1978-03-27','Differently-Abled',1);
+INSERT INTO Passenger VALUES (37,'Priyanka',NULL,'Soni','priyanka.soni@gmail.com','1993-11-04','General',1);
+INSERT INTO Passenger VALUES (38,'Hitesh',NULL,'Rathod','hitesh.rathod@gmail.com','1969-05-31','Senior',2);
+INSERT INTO Passenger VALUES (39,'Foram',NULL,'Pandya','foram.pandya@gmail.com','2003-01-20','Student',2);
+INSERT INTO Passenger VALUES (40,'Snehal',NULL,'Modi','snehal.modi@gmail.com','1987-08-08','General',1);
+
+ 18. PASSENGER_PHONE 
+-- Schema: passenger_id, phone, phone_type
+INSERT INTO Passenger_Phone VALUES (1,'9824101001','Mobile');
+INSERT INTO Passenger_Phone VALUES (2,'9824101002','Mobile');
+INSERT INTO Passenger_Phone VALUES (3,'9824101003','Mobile');
+INSERT INTO Passenger_Phone VALUES (4,'9824101004','Mobile');
+INSERT INTO Passenger_Phone VALUES (5,'9824101005','Mobile');
+INSERT INTO Passenger_Phone VALUES (6,'9824101006','Mobile');
+INSERT INTO Passenger_Phone VALUES (7,'9824101007','Mobile');
+INSERT INTO Passenger_Phone VALUES (8,'9824101008','Mobile');
+INSERT INTO Passenger_Phone VALUES (9,'9824101009','Mobile');
+INSERT INTO Passenger_Phone VALUES (10,'9824101010','Mobile');
+INSERT INTO Passenger_Phone VALUES (11,'9824101011','Mobile');
+INSERT INTO Passenger_Phone VALUES (12,'9824101012','Mobile');
+INSERT INTO Passenger_Phone VALUES (13,'9824101013','Mobile');
+INSERT INTO Passenger_Phone VALUES (14,'9824101014','Mobile');
+INSERT INTO Passenger_Phone VALUES (15,'9824101015','Mobile');
+INSERT INTO Passenger_Phone VALUES (16,'9824101016','Mobile');
+INSERT INTO Passenger_Phone VALUES (17,'9824101017','Mobile');
+INSERT INTO Passenger_Phone VALUES (18,'9824101018','Mobile');
+INSERT INTO Passenger_Phone VALUES (19,'9824101019','Mobile');
+INSERT INTO Passenger_Phone VALUES (20,'9824101020','Mobile');
+INSERT INTO Passenger_Phone VALUES (21,'9824101021','Mobile');
+INSERT INTO Passenger_Phone VALUES (22,'9824101022','Mobile');
+INSERT INTO Passenger_Phone VALUES (23,'9824101023','Mobile');
+INSERT INTO Passenger_Phone VALUES (24,'9824101024','Mobile');
+INSERT INTO Passenger_Phone VALUES (25,'9824101025','Mobile');
+INSERT INTO Passenger_Phone VALUES (26,'9824101026','Mobile');
+INSERT INTO Passenger_Phone VALUES (27,'9824101027','Mobile');
+INSERT INTO Passenger_Phone VALUES (28,'9824101028','Mobile');
+INSERT INTO Passenger_Phone VALUES (29,'9824101029','Mobile');
+INSERT INTO Passenger_Phone VALUES (30,'9824101030','Mobile');
+INSERT INTO Passenger_Phone VALUES (31,'9824101031','Mobile');
+INSERT INTO Passenger_Phone VALUES (32,'9824101032','Mobile');
+INSERT INTO Passenger_Phone VALUES (33,'9824101033','Mobile');
+INSERT INTO Passenger_Phone VALUES (34,'9824101034','Mobile');
+INSERT INTO Passenger_Phone VALUES (35,'9824101035','Mobile');
+INSERT INTO Passenger_Phone VALUES (36,'9824101036','Mobile');
+INSERT INTO Passenger_Phone VALUES (37,'9824101037','Mobile');
+INSERT INTO Passenger_Phone VALUES (38,'9824101038','Mobile');
+INSERT INTO Passenger_Phone VALUES (39,'9824101039','Mobile');
+INSERT INTO Passenger_Phone VALUES (40,'9824101040','Mobile');
+
+ 19. SMART CARD 
+-- Schema: card_id, passenger_id, balance, issue_date, expiry_date, card_status
+INSERT INTO Smart_Card VALUES (1,1,250.0,'2023-04-01','2026-03-31','Active');
+INSERT INTO Smart_Card VALUES (2,2,80.0,'2023-07-01','2026-06-30','Active');
+INSERT INTO Smart_Card VALUES (3,3,500.0,'2024-01-01','2026-12-31','Active');
+INSERT INTO Smart_Card VALUES (4,4,150.0,'2022-01-01','2025-12-31','Active');
+INSERT INTO Smart_Card VALUES (5,5,20.0,'2023-04-01','2026-03-31','Active');
+INSERT INTO Smart_Card VALUES (6,6,320.0,'2023-10-01','2026-09-30','Active');
+INSERT INTO Smart_Card VALUES (7,7,0.0,'2022-01-01','2024-12-31','Blocked');
+INSERT INTO Smart_Card VALUES (8,8,100.0,'2023-07-01','2026-06-30','Active');
+INSERT INTO Smart_Card VALUES (9,9,430.0,'2024-01-01','2026-12-31','Active');
+INSERT INTO Smart_Card VALUES (10,10,175.0,'2023-04-01','2026-03-31','Active');
+INSERT INTO Smart_Card VALUES (11,12,220.0,'2023-07-01','2026-06-30','Active');
+INSERT INTO Smart_Card VALUES (12,13,60.0,'2023-04-01','2026-03-31','Active');
+INSERT INTO Smart_Card VALUES (13,15,390.0,'2023-10-01','2026-09-30','Active');
+INSERT INTO Smart_Card VALUES (14,18,110.0,'2023-07-01','2026-06-30','Active');
+INSERT INTO Smart_Card VALUES (15,20,45.0,'2023-04-01','2026-03-31','Active');
+INSERT INTO Smart_Card VALUES (16,22,600.0,'2024-01-01','2026-12-31','Active');
+INSERT INTO Smart_Card VALUES (17,25,180.0,'2023-07-01','2026-06-30','Active');
+INSERT INTO Smart_Card VALUES (18,28,35.0,'2023-04-01','2026-03-31','Active');
+INSERT INTO Smart_Card VALUES (19,30,520.0,'2023-10-01','2026-09-30','Active');
+INSERT INTO Smart_Card VALUES (20,32,90.0,'2023-07-01','2026-06-30','Active');
+INSERT INTO Smart_Card VALUES (21,34,10.0,'2023-04-01','2026-03-31','Active');
+INSERT INTO Smart_Card VALUES (22,37,340.0,'2024-01-01','2026-12-31','Active');
+INSERT INTO Smart_Card VALUES (23,40,270.0,'2023-07-01','2026-06-30','Active');
+INSERT INTO Smart_Card VALUES (24,21,0.0,'2022-07-01','2025-06-30','Blocked');
+INSERT INTO Smart_Card VALUES (25,26,150.0,'2023-10-01','2026-09-30','Active');
+INSERT INTO Smart_Card VALUES (26,29,400.0,'2024-01-01','2026-12-31','Active');
+
+ 20. FARE 
+-- Schema: fare_id, fare_amount, concession_type, operator_id, from_zone_id, to_zone_id
+INSERT INTO Fare VALUES (1,5.0,'General',1,1,1);
+INSERT INTO Fare VALUES (2,10.0,'General',1,1,2);
+INSERT INTO Fare VALUES (3,15.0,'General',1,1,3);
+INSERT INTO Fare VALUES (4,20.0,'General',1,1,4);
+INSERT INTO Fare VALUES (5,25.0,'General',1,1,5);
+INSERT INTO Fare VALUES (6,40.0,'General',1,1,6);
+INSERT INTO Fare VALUES (7,10.0,'Student',1,1,3);
+INSERT INTO Fare VALUES (8,10.0,'Senior',1,1,3);
+INSERT INTO Fare VALUES (9,10.0,'Differently-Abled',1,1,3);
+INSERT INTO Fare VALUES (10,12.0,'General',1,2,3);
+INSERT INTO Fare VALUES (11,8.0,'Student',1,2,3);
+INSERT INTO Fare VALUES (12,6.0,'General',2,7,7);
+INSERT INTO Fare VALUES (13,4.0,'Student',2,7,7);
+INSERT INTO Fare VALUES (14,3.0,'Senior',2,7,7);
+INSERT INTO Fare VALUES (15,5.0,'General',2,7,7);
+INSERT INTO Fare VALUES (16,7.0,'General',3,8,8);
+INSERT INTO Fare VALUES (17,5.0,'Senior',3,8,8);
+INSERT INTO Fare VALUES (18,5.0,'Student',3,8,8);
+INSERT INTO Fare VALUES (19,5.0,'Differently-Abled',3,8,8);
+INSERT INTO Fare VALUES (20,15.0,'General',4,9,9);
+INSERT INTO Fare VALUES (21,10.0,'Senior',4,9,9);
+INSERT INTO Fare VALUES (22,25.0,'General',4,10,10);
+
+21. PASS 
+-- Schema: pass_id, pass_type, valid_from, valid_to, amount_paid, passenger_id, operator_id
+INSERT INTO Pass VALUES (1,'Monthly','2024-01-01','2024-01-31',600.0,1,1);
+INSERT INTO Pass VALUES (2,'Monthly','2024-01-01','2024-01-31',400.0,3,1);
+INSERT INTO Pass VALUES (3,'Weekly','2024-02-01','2024-02-07',150.0,2,2);
+INSERT INTO Pass VALUES (4,'Monthly','2024-01-01','2024-01-31',300.0,6,3);
+INSERT INTO Pass VALUES (5,'Monthly','2024-03-01','2024-03-31',600.0,8,1);
+INSERT INTO Pass VALUES (6,'Monthly','2024-02-01','2024-02-29',500.0,9,1);
+INSERT INTO Pass VALUES (7,'Weekly','2024-01-15','2024-01-21',100.0,5,2);
+INSERT INTO Pass VALUES (8,'Monthly','2024-03-01','2024-03-31',600.0,12,1);
+INSERT INTO Pass VALUES (9,'Monthly','2024-02-01','2024-02-29',400.0,14,1);
+INSERT INTO Pass VALUES (10,'Monthly','2024-01-01','2024-01-31',300.0,18,3);
+INSERT INTO Pass VALUES (11,'Monthly','2024-03-01','2024-03-31',750.0,22,4);
+INSERT INTO Pass VALUES (12,'Monthly','2024-02-01','2024-02-29',500.0,25,1);
+INSERT INTO Pass VALUES (13,'Monthly','2024-01-01','2024-01-31',400.0,30,1);
+INSERT INTO Pass VALUES (14,'Weekly','2024-03-01','2024-03-31',150.0,34,2);
+INSERT INTO Pass VALUES (15,'Monthly','2024-02-01','2024-02-29',300.0,37,3);
+INSERT INTO Pass VALUES (16,'Monthly','2024-01-01','2024-01-31',600.0,40,1);
+
+ 22. TRIP 
+-- Schema: trip_id, trip_date, trip_status, route_id, vehicle_id, staff_id
+INSERT INTO Trip VALUES (1,'2024-01-15','Completed',1,1,1);
+INSERT INTO Trip VALUES (2,'2024-01-15','Completed',2,5,3);
+INSERT INTO Trip VALUES (3,'2024-01-16','Delayed',1,2,2);
+INSERT INTO Trip VALUES (4,'2024-01-16','Completed',5,11,8);
+INSERT INTO Trip VALUES (5,'2024-01-17','Completed',6,13,9);
+INSERT INTO Trip VALUES (6,'2024-01-17','Delayed',2,6,4);
+INSERT INTO Trip VALUES (7,'2024-01-18','Completed',15,19,19);
+INSERT INTO Trip VALUES (8,'2024-01-18','Completed',22,25,25);
+INSERT INTO Trip VALUES (9,'2024-01-19','Cancelled',1,3,1);
+INSERT INTO Trip VALUES (10,'2024-01-20','Completed',3,8,5);
+INSERT INTO Trip VALUES (11,'2024-01-20','Completed',9,14,10);
+INSERT INTO Trip VALUES (12,'2024-01-21','Completed',16,20,21);
+INSERT INTO Trip VALUES (13,'2024-01-22','Delayed',5,12,8);
+INSERT INTO Trip VALUES (14,'2024-01-22','Completed',2,6,4);
+INSERT INTO Trip VALUES (15,'2024-01-23','Completed',1,1,2);
+INSERT INTO Trip VALUES (16,'2024-01-23','Completed',7,13,9);
+INSERT INTO Trip VALUES (17,'2024-01-24','Delayed',6,15,10);
+INSERT INTO Trip VALUES (18,'2024-01-24','Completed',22,26,25);
+INSERT INTO Trip VALUES (19,'2024-01-25','Completed',4,10,7);
+INSERT INTO Trip VALUES (20,'2024-01-25','Completed',17,21,23);
+INSERT INTO Trip VALUES (21,'2024-01-26','Completed',23,27,27);
+INSERT INTO Trip VALUES (22,'2024-01-26','Delayed',24,28,29);
+INSERT INTO Trip VALUES (23,'2024-01-27','Completed',2,5,3);
+INSERT INTO Trip VALUES (24,'2024-01-27','Completed',8,11,8);
+INSERT INTO Trip VALUES (25,'2024-01-28','Cancelled',5,13,8);
+INSERT INTO Trip VALUES (26,'2024-01-28','Completed',15,22,19);
+INSERT INTO Trip VALUES (27,'2024-01-29','Completed',1,4,6);
+INSERT INTO Trip VALUES (28,'2024-01-29','Completed',9,16,10);
+INSERT INTO Trip VALUES (29,'2024-01-30','Delayed',3,9,5);
+INSERT INTO Trip VALUES (30,'2024-01-30','Completed',22,29,25);
+
+23. TRIP_STOP 
+-- Schema: trip_id, sequence_no, stop_id, sched_arrival, actual_arrival
+INSERT INTO Trip_Stop VALUES (1,1,1,'06:20:00','06:20:00');
+INSERT INTO Trip_Stop VALUES (1,2,5,'06:26:00','06:26:00');
+INSERT INTO Trip_Stop VALUES (1,3,11,'06:35:00','06:34:00');
+INSERT INTO Trip_Stop VALUES (1,4,15,'06:44:00','06:44:00');
+INSERT INTO Trip_Stop VALUES (1,5,17,'06:52:00','06:52:00');
+INSERT INTO Trip_Stop VALUES (2,1,19,'07:00:00','07:00:00');
+INSERT INTO Trip_Stop VALUES (2,2,22,'07:06:00','07:06:00');
+INSERT INTO Trip_Stop VALUES (2,3,24,'07:14:00','07:14:00');
+INSERT INTO Trip_Stop VALUES (2,4,27,'07:22:00','07:22:00');
+INSERT INTO Trip_Stop VALUES (2,5,32,'07:35:00','07:35:00');
+INSERT INTO Trip_Stop VALUES (3,1,1,'08:00:00','08:12:00');
+INSERT INTO Trip_Stop VALUES (3,2,5,'08:04:00','08:15:00');
+INSERT INTO Trip_Stop VALUES (3,3,11,'08:13:00','08:25:00');
+INSERT INTO Trip_Stop VALUES (3,4,17,'08:22:00','08:33:00');
+INSERT INTO Trip_Stop VALUES (4,1,50,'09:00:00','09:00:00');
+INSERT INTO Trip_Stop VALUES (4,2,54,'09:08:00','09:08:00');
+INSERT INTO Trip_Stop VALUES (4,3,51,'09:20:00','09:20:00');
+INSERT INTO Trip_Stop VALUES (5,1,52,'09:30:00','09:30:00');
+INSERT INTO Trip_Stop VALUES (5,2,55,'09:40:00','09:40:00');
+INSERT INTO Trip_Stop VALUES (5,3,50,'09:50:00','09:49:00');
+INSERT INTO Trip_Stop VALUES (5,4,53,'10:05:00','10:05:00');
+INSERT INTO Trip_Stop VALUES (6,1,19,'10:00:00','10:08:00');
+INSERT INTO Trip_Stop VALUES (6,2,24,'10:12:00','10:20:00');
+INSERT INTO Trip_Stop VALUES (6,3,32,'10:25:00','10:33:00');
+INSERT INTO Trip_Stop VALUES (7,1,80,'08:00:00','08:00:00');
+INSERT INTO Trip_Stop VALUES (7,2,81,'08:15:00','08:15:00');
+INSERT INTO Trip_Stop VALUES (7,3,82,'08:35:00','08:35:00');
+INSERT INTO Trip_Stop VALUES (7,4,83,'08:55:00','08:55:00');
+INSERT INTO Trip_Stop VALUES (8,1,100,'07:00:00','07:00:00');
+INSERT INTO Trip_Stop VALUES (8,2,103,'07:15:00','07:15:00');
+INSERT INTO Trip_Stop VALUES (8,3,105,'07:30:00','07:30:00');
+INSERT INTO Trip_Stop VALUES (10,1,32,'08:30:00','08:30:00');
+INSERT INTO Trip_Stop VALUES (10,2,37,'08:47:00','08:47:00');
+INSERT INTO Trip_Stop VALUES (10,3,34,'09:00:00','09:00:00');
+INSERT INTO Trip_Stop VALUES (10,4,33,'09:10:00','09:10:00');
+INSERT INTO Trip_Stop VALUES (13,1,50,'14:00:00','14:20:00');
+INSERT INTO Trip_Stop VALUES (13,2,54,'14:08:00','14:27:00');
+INSERT INTO Trip_Stop VALUES (13,3,51,'14:20:00','14:39:00');
+INSERT INTO Trip_Stop VALUES (22,1,100,'16:00:00','16:10:00');
+INSERT INTO Trip_Stop VALUES (22,2,103,'16:15:00','16:24:00');
+INSERT INTO Trip_Stop VALUES (22,3,105,'16:30:00','16:39:00');
+INSERT INTO Trip_Stop VALUES (29,1,32,'17:00:00','17:18:00');
+INSERT INTO Trip_Stop VALUES (29,2,37,'17:17:00','17:35:00');
+INSERT INTO Trip_Stop VALUES (29,3,33,'17:40:00','17:58:00');
+
+ 24. TICKET_TRANSACTION 
+-- Schema: txn_id, ticket_type, amount, txn_datetime, payment_mode, passenger_id, trip_id, card_id
+INSERT INTO Ticket_Transaction VALUES (1,'Token',20.0,'2024-01-15 09:00:00','Cash',1,4,NULL);
+INSERT INTO Ticket_Transaction VALUES (2,'Smart Card',10.0,'2024-01-15 09:15:00','Smart Card',2,2,2);
+INSERT INTO Ticket_Transaction VALUES (3,'Token',15.0,'2024-01-16 08:30:00','UPI',3,3,NULL);
+INSERT INTO Ticket_Transaction VALUES (4,'Monthly Pass',600.0,'2024-01-01 10:00:00','Cash',1,6,1);
+INSERT INTO Ticket_Transaction VALUES (5,'Smart Card',6.0,'2024-01-17 07:45:00','Smart Card',5,12,5);
+INSERT INTO Ticket_Transaction VALUES (6,'Token',6.0,'2024-01-17 08:00:00','UPI',6,12,NULL);
+INSERT INTO Ticket_Transaction VALUES (7,'Monthly Pass',400.0,'2024-01-01 11:00:00','Smart Card',3,7,3);
+INSERT INTO Ticket_Transaction VALUES (8,'Token',7.0,'2024-01-18 09:30:00','Cash',4,16,NULL);
+INSERT INTO Ticket_Transaction VALUES (9,'Smart Card',15.0,'2024-01-19 08:00:00','Smart Card',9,3,9);
+INSERT INTO Ticket_Transaction VALUES (10,'Token',15.0,'2024-01-20 09:00:00','Cash',10,3,NULL);
+INSERT INTO Ticket_Transaction VALUES (11,'Smart Card',25.0,'2024-01-20 08:15:00','Smart Card',8,5,8);
+INSERT INTO Ticket_Transaction VALUES (12,'Token',40.0,'2024-01-21 10:00:00','UPI',12,6,NULL);
+INSERT INTO Ticket_Transaction VALUES (13,'Token',6.0,'2024-01-22 14:05:00','Cash',14,12,NULL);
+INSERT INTO Ticket_Transaction VALUES (14,'Smart Card',15.0,'2024-01-22 09:00:00','Smart Card',15,3,13);
+INSERT INTO Ticket_Transaction VALUES (15,'Token',10.0,'2024-01-23 08:00:00','UPI',17,2,NULL);
+INSERT INTO Ticket_Transaction VALUES (16,'Token',15.0,'2024-01-23 10:00:00','Cash',6,20,NULL);
+INSERT INTO Ticket_Transaction VALUES (17,'Smart Card',20.0,'2024-01-24 09:00:00','Smart Card',18,4,14);
+INSERT INTO Ticket_Transaction VALUES (18,'Monthly Pass',600.0,'2024-02-01 10:00:00','UPI',15,6,13);
+INSERT INTO Ticket_Transaction VALUES (19,'Token',10.0,'2024-01-25 08:30:00','Cash',20,2,NULL);
+INSERT INTO Ticket_Transaction VALUES (20,'Token',15.0,'2024-01-25 09:00:00','UPI',7,3,NULL);
+INSERT INTO Ticket_Transaction VALUES (21,'Smart Card',6.0,'2024-01-26 10:00:00','Smart Card',16,15,NULL);
+INSERT INTO Ticket_Transaction VALUES (22,'Token',7.0,'2024-01-26 11:00:00','Cash',19,17,NULL);
+INSERT INTO Ticket_Transaction VALUES (23,'Monthly Pass',600.0,'2024-01-01 09:00:00','UPI',22,6,16);
+INSERT INTO Ticket_Transaction VALUES (24,'Smart Card',6.0,'2024-01-27 08:00:00','Smart Card',21,12,NULL);
+INSERT INTO Ticket_Transaction VALUES (25,'Token',15.0,'2024-01-27 09:00:00','Cash',23,3,NULL);
+INSERT INTO Ticket_Transaction VALUES (26,'Smart Card',25.0,'2024-01-28 08:30:00','Smart Card',25,5,17);
+INSERT INTO Ticket_Transaction VALUES (27,'Token',7.0,'2024-01-29 09:00:00','UPI',27,16,NULL);
+INSERT INTO Ticket_Transaction VALUES (28,'Monthly Pass',400.0,'2024-01-01 10:00:00','Cash',29,7,NULL);
+INSERT INTO Ticket_Transaction VALUES (29,'Smart Card',20.0,'2024-01-30 08:00:00','Smart Card',30,4,19);
+INSERT INTO Ticket_Transaction VALUES (30,'Token',15.0,'2024-01-30 09:30:00','UPI',32,3,NULL);
+INSERT INTO Ticket_Transaction VALUES (31,'Token',6.0,'2024-01-22 14:30:00','Cash',33,12,NULL);
+INSERT INTO Ticket_Transaction VALUES (32,'Smart Card',40.0,'2024-01-23 09:00:00','Smart Card',34,6,20);
+INSERT INTO Ticket_Transaction VALUES (33,'Token',7.0,'2024-01-24 10:00:00','UPI',35,18,NULL);
+INSERT INTO Ticket_Transaction VALUES (34,'Smart Card',15.0,'2024-01-25 08:00:00','Smart Card',36,3,NULL);
+INSERT INTO Ticket_Transaction VALUES (35,'Token',6.0,'2024-01-26 09:00:00','Cash',37,12,NULL);
+INSERT INTO Ticket_Transaction VALUES (36,'Monthly Pass',300.0,'2024-01-01 10:00:00','UPI',38,16,NULL);
+INSERT INTO Ticket_Transaction VALUES (37,'Smart Card',10.0,'2024-01-27 08:30:00','Smart Card',39,2,NULL);
+INSERT INTO Ticket_Transaction VALUES (38,'Token',20.0,'2024-01-28 09:00:00','Cash',40,4,22);
+INSERT INTO Ticket_Transaction VALUES (39,'Token',25.0,'2024-01-15 10:00:00','UPI',24,22,NULL);
+INSERT INTO Ticket_Transaction VALUES (40,'Smart Card',15.0,'2024-01-16 09:00:00','Smart Card',26,20,NULL);
+INSERT INTO Ticket_Transaction VALUES (41,'Token',6.0,'2024-01-17 08:00:00','Cash',28,12,18);
+INSERT INTO Ticket_Transaction VALUES (42,'Smart Card',10.0,'2024-01-18 09:30:00','Smart Card',31,2,NULL);
+INSERT INTO Ticket_Transaction VALUES (43,'Monthly Pass',750.0,'2024-03-01 10:00:00','UPI',22,22,16);
+INSERT INTO Ticket_Transaction VALUES (44,'Token',40.0,'2024-01-21 11:00:00','Cash',12,6,NULL);
+INSERT INTO Ticket_Transaction VALUES (45,'Smart Card',15.0,'2024-01-22 09:00:00','Smart Card',2,3,2);
+
+ 25. COMPLAINT 
+
+-- Schema: complaint_id, category, description, status, filed_date, resolved_date, passenger_id, trip_id
+INSERT INTO Complaint VALUES (1,'Delay','Train delayed 12 min Blue Line, missed connection','Resolved','2024-01-15','2024-01-18',1,3);
+INSERT INTO Complaint VALUES (2,'Overcrowding','Bus extremely crowded during peak hours','Open','2024-01-16',NULL,2,4);
+INSERT INTO Complaint VALUES (3,'Cleanliness','Dirty seats on AMTS bus Route 31','Resolved','2024-01-18','2024-01-20',6,7);
+INSERT INTO Complaint VALUES (4,'AC Not Working','Air conditioning not working in coach 2','Resolved','2024-01-19','2024-01-22',8,3);
+INSERT INTO Complaint VALUES (5,'Rude Behaviour','Conductor was rude to elderly passenger','In Progress','2024-01-20',NULL,11,8);
+INSERT INTO Complaint VALUES (6,'Delay','BRTS Route 1 delayed 20 min missed connection','Resolved','2024-01-22','2024-01-25',14,13);
+INSERT INTO Complaint VALUES (7,'Safety','Platform edge gap too wide at Kalupur station','Open','2024-01-22',NULL,4,1);
+INSERT INTO Complaint VALUES (8,'Ticketing','Smart card not working at entry gate','Resolved','2024-01-20','2024-01-21',5,1);
+INSERT INTO Complaint VALUES (9,'Delay','Red Line delayed frequently in morning','Open','2024-01-23',NULL,9,6);
+INSERT INTO Complaint VALUES (10,'Lost & Found','Left umbrella on Blue Line train','Resolved','2024-01-22','2024-01-24',18,15);
+INSERT INTO Complaint VALUES (11,'Overcrowding','Metro very crowded during Navratri festival','In Progress','2024-01-24',NULL,20,1);
+INSERT INTO Complaint VALUES (12,'Ticketing','Wrong fare charged on BRTS card','Resolved','2024-01-25','2024-01-30',15,5);
+INSERT INTO Complaint VALUES (13,'Cleanliness','Washroom not clean at Motera Metro Station','Resolved','2024-01-26','2024-02-01',3,2);
+INSERT INTO Complaint VALUES (14,'Safety','Escalator not working at APMC metro station','In Progress','2024-01-27',NULL,22,2);
+INSERT INTO Complaint VALUES (15,'Delay','AMTS bus 30 min late, no announcement','Resolved','2024-01-26','2024-01-28',7,26);
+INSERT INTO Complaint VALUES (16,'AC Not Working','GSRTC bus AC broken Gandhinagar Express route','Open','2024-01-28',NULL,16,22);
+INSERT INTO Complaint VALUES (17,'Rude Behaviour','Driver overspeed and harsh braking','Resolved','2024-01-29','2024-02-03',28,17);
+INSERT INTO Complaint VALUES (18,'Ticketing','Mobile QR ticket not accepted at metro gate','Open','2024-01-30',NULL,34,15);
+INSERT INTO Complaint VALUES (19,'Delay','Yellow Line delayed 18 min signal issue','Resolved','2024-01-30','2024-02-05',39,29);
+INSERT INTO Complaint VALUES (20,'Overcrowding','GSRTC bus always overloaded morning peak','Open','2024-01-30',NULL,33,30);
